@@ -14,7 +14,7 @@ const {  wetherData }=useContext(WetherContext)
   const { temp_c, temp_f, condition, dewpoint_c, heatindex_c ,feelslike_c,uv,wind_kph,pressure_mb,humidity} =
   wetherData?.data?.current || {};
   return (
-   <div className="bg-gradient-to-t  from-[#0E1421] via-[#1d325f4c] to-[#0E1421] p-6 h-1/2  text-white rounded-2xl">
+   <div className="bg-gradient-to-t  from-[#0E1421] via-[#1d325f4c] to-[#0E1421] p-6  text-white rounded-2xl">
     <h1 className="text-xl ">Today Highlight</h1>
  {/*    {!loading ? ( */}
       <div className="grid grid-cols-2 grid-rows-2 gap-2 mt-3 ">
@@ -71,9 +71,7 @@ const {  wetherData }=useContext(WetherContext)
         </div>
       </div>
 
-      <div className="flex items-center justify-center h-44  w-full">
-        <div className="loader"></div>
-      </div>
+
 </div>
 
   )

@@ -16,7 +16,7 @@ const WetherProvider = ({ children }) => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          console.log(position,"position")
+      
           setLatitude(position.coords.latitude.toFixed(2));
           setLogitude(position.coords.longitude.toFixed(2));
           setLoading(false);
