@@ -3,18 +3,20 @@ import toast from "react-hot-toast";
 
 export const WetherContext = createContext(null);
 const WetherProvider = ({ children }) => {
-  const [wetherData, setWetherData] = useState();
+  const [wetherData, setWetherData] = useState(null);
   const [loading, setLoading] = useState(false);
   //latitude = Region/place
   const [latitude, setLatitude] = useState(null);
   const [logitude, setLogitude] = useState(null);
-const [location,setLocation]=useState('')
+  const [location, setLocation] = useState("");
+  console.log(wetherData)
   /* get the current location */
   useEffect(() => {
     setLoading(true);
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
+          console.log(position,"position")
           setLatitude(position.coords.latitude.toFixed(2));
           setLogitude(position.coords.longitude.toFixed(2));
           setLoading(false);
@@ -42,23 +44,19 @@ const [location,setLocation]=useState('')
         //   setLoading(false);
         // }
 
-if(data.location){
-    setLocation(data.location.name)
-}
-
-
-
+        if (data.location) {
+          setLocation(data.location.name);
+          setWetherData({data})
+        }
       });
   }, []);
-console.log("location:",location)
-  console.log(latitude, logitude);
+
+const valuesOfWether={location,latitude,logitude}
   const wetherValue = {
     loading,
     setLoading,
     wetherData,
-    latitude,
-    logitude,
-    location
+    valuesOfWether
   };
 
   return (
