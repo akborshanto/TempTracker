@@ -1,9 +1,10 @@
-![My Project Logo](/public/img/ssReadme.png)
+![LiveLINK] (https://temptracker-fawn.vercel.app/)
 
+![My Project Logo](/public/img/ssReadme.png)
 
 ## Description
 
-The SkySense is a dynamic and interactive web app that provides real-time weather information. It allows users to search for weather conditions by city or use their current location to get localized weather updates. The application features a clean, user-friendly interface and offers detailed forecasts including hourly and daily predictions.
+The TempTrackeris a dynamic and interactive web app that provides real-time weather information. It allows users to search for weather conditions by city or use their current location to get localized weather updates. The application features a clean, user-friendly interface and offers detailed forecasts including hourly and daily predictions.
 
 ## Key Features
 
