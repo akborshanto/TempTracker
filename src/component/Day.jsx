@@ -15,7 +15,6 @@ const Day = () => {
   const handleTemp = () => {
     setIsCelsius(!isCelsius);
   };
-  console.log(wetherData?.data?.current)
   return (
     <section className=" flex justify-between  p-5 mt-4  selection:text-cyan-500 ">
       <div className="bg-[rgb(19,24,38)] w-1/2 h-1/2 p-4 rounded-lg  shadow-sm shadow-cyan-500 hover:shadow-blue-600 hover:shadow-md">
