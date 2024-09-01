@@ -12,10 +12,10 @@ const handelForm=(e)=>{
    
     <div className="flex gap-5">
       <div>
-        <Link to={"/"} className="py-4 flex gap-2">
+        <Link to={"/"} className="py-4 ">
          {/*  <img src={icon} alt="Sky Sense" /> */}
-          <div className="text-2xl text-[#fff]">
-            <span
+          <div className="text-2xl text-[#fff] flex">
+            <div className='flex  gap-2'
               style={{
                 background: "linear-gradient(to right, #742bec, #481d8c)",
                 WebkitBackgroundClip: "text",
@@ -23,9 +23,12 @@ const handelForm=(e)=>{
                 fontWeight: "900",
               }}
             >
+            <img src="/public/img/icon.svg" alt="" className='w-3  lg:w-10    ' />
            Temp
-            </span>
-   Tracker
+           
+            </div>
+ <span>Tracker</span>
+   
           </div>
         </Link>
       </div>

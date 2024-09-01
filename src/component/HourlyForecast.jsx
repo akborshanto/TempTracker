@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { WetherContext } from "./../hook/WetherContext";
 
 const HourlyForecast = () => {
-  const { wetherData } = useContext(WetherContext);
+  const { wetherData ,showC,
+    setShowC} = useContext(WetherContext);
 
   const nowUtc = new Date();
 
@@ -57,7 +58,7 @@ const HourlyForecast = () => {
                     alt=""
                     className="my-4 mx-auto w-[90px]"
                   />
-                  <h1>{item?.temp_c}° C</h1>
+                  <h1>{showC? item?.temp_c : item?.temp_f} {showC? "° C":"° F"}</h1>
                 </div>
               ))}
             </div>
@@ -122,7 +123,7 @@ const HourlyForecast = () => {
                   key={i}
                   className="flex  md:flex-row   lg:flex-row justify-between mt-4 bg-[#21293d] p-2 rounded-lg items-center shadow-sm shadow-cyan-500 hover:shadow-blue-600 hover:shadow-md"
                 >
-                  <h1 className="text-2xl font-bold">{item?.temp_c}° C</h1>
+                  <h1 className="text-2xl font-bold">{showC?item?.temp_c:item?.temp_f }{showC? "° C":"° F"}</h1>
                   <img src={item?.condition?.icon}></img>
                 </div>
               );
