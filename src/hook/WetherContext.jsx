@@ -9,6 +9,8 @@ const WetherProvider = ({ children }) => {
   const [latitude, setLatitude] = useState(null);
   const [logitude, setLogitude] = useState(null);
   const [location, setLocation] = useState("");
+  const [showC,setShowC]=useState(true)
+ 
   /* get the current location */
   useEffect(() => {
     setLoading(true);
@@ -55,7 +57,9 @@ const valuesOfWether={location,latitude,logitude}
     loading,
     setLoading,
     wetherData,
-    valuesOfWether
+    valuesOfWether,
+    showC,
+    setShowC
   };
 
   return (

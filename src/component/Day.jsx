@@ -4,13 +4,15 @@ import { IoLocationSharp } from "react-icons/io5";
 import { TodayStaus } from "./TodayStaus";
 import { WetherContext } from "../hook/WetherContext";
 const Day = () => {
-  const { wetherData, valuesOfWether } = useContext(WetherContext);
+  const { wetherData, valuesOfWether ,showC,setShowC} = useContext(WetherContext);
   const { country, localtime, name, tz_id } = wetherData?.data?.location || {};
   const {
     temp_c,
     temp_f,
     condition,
     dewpoint_c,
+    dewpoint_f,
+    heatindex_f,
     heatindex_c,
     feelslike_c,
     uv,
@@ -19,14 +21,13 @@ const Day = () => {
     humidity,
   } = wetherData?.data?.current || {};
 
-  const [temercature, setTemperature] = useState({ cel: temp_c, fer: temp_f });
-
-  const [isCelsius, setIsCelsius] = useState(true);
+console.log(wetherData?.data?.current )
   const handleTemp = () => {
-    setIsCelsius(!isCelsius);
+    setShowC(!showC);
   };
   return (
     <section className=" flex flex-col  lg:flex-row gap-4 mb:0 justify-between  p-5 mt-0 lg:mt-4  selection:text-cyan-500 ">
+ 
       <div className="bg-[rgb(19,24,38)] lg:w-1/2 lg:h-1/2 p-2 lg:p-4 rounded-lg  shadow-sm shadow-cyan-500 hover:shadow-blue-600 hover:shadow-md">
         {/* upper div */}
         <div className="flex justify-between  lg:flex-row items-cente my-6  ">
@@ -37,6 +38,7 @@ const Day = () => {
           </div>
 
           <div>
+      
             <input
               type="checkbox"
               className="toggle bg-cyan-500"
@@ -55,10 +57,10 @@ const Day = () => {
             <div className=" text-center">
               {/*      <h1> {isCelsius ? `${temercature?.cel}°C` : `${temercature?.fer}°F`}</h1>
                */}
-              <h1 className=" text-3xl lg:text-4xl font-bold  my-4 lg:my-6">{temp_c}°C</h1>
+              <h1 className=" text-3xl lg:text-4xl font-bold  my-4 lg:my-6">   {showC ? temp_c : temp_f}  {showC ? '° C' : '° F'}</h1>
               <div className="flex  flex-col  md:flex-row lg:flex-row gap-3 lg:gap-4 text-xl font-bold">
-                <p className="">High: {heatindex_c}</p>
-                <p>Low: {dewpoint_c}</p>
+                <p className="">High: {showC? heatindex_c: heatindex_f}  {showC?  '° C' : '° F'}</p>
+                <p>Low: {showC ? dewpoint_c:dewpoint_f}</p>
               </div>
             </div>
             {/* text clouddy */}

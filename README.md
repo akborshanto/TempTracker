@@ -1,1 +1,2 @@
-![My Project Logo](/public/img/ssReadme.png)
+
+ <img src="/public/img/ssReadme.png " width="30" >
