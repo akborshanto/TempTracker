@@ -31,4 +31,4 @@ The SkySense is a dynamic and interactive web app that provides real-time weathe
 
 ## Contact
 
-For any questions or feedback, please reach out to [habibulla1278@gmail.com](mailto:habibulla1278@gmail.com).
+For any questions or feedback, please reach out to [akborshanto2002@gmail.com]
